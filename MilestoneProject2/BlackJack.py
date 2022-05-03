@@ -62,14 +62,32 @@ class Player(Deck):
 
     def print_player(self):
         print(f"Name: {self.name}")
-        print(f"Money: {self.money}")
+        print(f"Money: {self.money}$")
         print("Hand:")
         print(self)
         print("Count:")
         print(self.count)
 
-def ft_play_a_game(players):
+def ft_add_player(players):
     pass
+
+def ft_play_a_game(players):
+    new_player = True
+    while new_player:
+        print(f"Currently there are {len(players)} players:")
+        for item in players:
+            print(f"{item.name} : {item.money}$")
+        while True:
+            ans = input("Do you want to add a new player? (yes/no)")
+            if ans == "yes":
+                ft_add_player(players)
+                break
+            if ans == "no":
+                new_player = False
+                break
+            print("Please enter a valid answer.")
+    del_player = True
+    
 
 def ft_first_round(players, deck):
     pass
@@ -78,6 +96,7 @@ def ft_play_a_round():
     pass
 
 def main():
+    players = []
     while ft_play_a_game(players):
         deck = Deck()
         deck.shuf()
