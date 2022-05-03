@@ -69,25 +69,69 @@ class Player(Deck):
         print(self.count)
 
 def ft_add_player(players):
+    name = input("Please enter player name: ")
+    while True:
+        try:
+            money = int(input("Please enter the amount of money: "))
+            break
+        except:
+            print("Please enter a valid amount.")
+    play = Player(name, money)
+
+def ft_rem_player(players):
+    pass
+
+def ft_change_amount (players):
     pass
 
 def ft_play_a_game(players):
     new_player = True
     while new_player:
-        print(f"Currently there are {len(players)} players:")
+        print(f"Currently there are {len(players)} players: ")
         for item in players:
             print(f"{item.name} : {item.money}$")
         while True:
-            ans = input("Do you want to add a new player? (yes/no)")
+            ans = input("Do you want to add a new player? (yes/no): ")
             if ans == "yes":
                 ft_add_player(players)
                 break
             if ans == "no":
                 new_player = False
                 break
-            print("Please enter a valid answer.")
+            print("Please enter a valid answer. ")
     del_player = True
-    
+    while del_player:
+        print(f"Currently there are {len(players)} players: ")
+        for item in players:
+            print(f"{item.name} : {item.money}$")
+        while True:
+            ans = input("Does a player wants to stop playing? (yes/no): ")
+            if ans == "yes":
+                ft_rem_player(players)
+                break
+            if ans == "no":
+                del_player = False
+                break
+            print("Please enter a valid answer. ")
+    change_amount = True
+    while change_amount:
+        print(f"Currently there are {len(players)} players: ")
+        for item in players:
+            print(f"{item.name} : {item.money}$")
+        while True:
+            ans = input("Does a player wants to add or retrieve money? (yes/no): ")
+            if ans == "yes":
+                ft_change_amount(players)
+                break
+            if ans == "no":
+                change_amount = False
+                break
+            print("Please enter a valid answer ")
+    if len(players) > 0:
+        print("Okay, let's start the game! ")
+        return 1
+    print("No more players, thank you for playing! ")
+    return 0
 
 def ft_first_round(players, deck):
     pass
@@ -97,13 +141,18 @@ def ft_play_a_round():
 
 def main():
     players = []
+    ft_play_a_game(players)
+
+'''
+def main():
+    players = []
     while ft_play_a_game(players):
         deck = Deck()
         deck.shuf()
         ft_first_round(players, deck)
         while ft_play_a_round(players, deck) != 0:
             pass
-
+'''
 if __name__ == "__main__":
     main()
 
