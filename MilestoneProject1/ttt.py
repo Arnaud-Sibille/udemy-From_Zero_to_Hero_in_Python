@@ -4,7 +4,7 @@ def print_arr(arr):
 
 def ft_replace(arr, symb):
     try:
-        row, col = input("Enter row and column separated by a space: ").split()
+       row, col = input("Enter row and column separated by a space: ").split()
     except:
         print("Please enter strictly 2 arguments")
         return 0
