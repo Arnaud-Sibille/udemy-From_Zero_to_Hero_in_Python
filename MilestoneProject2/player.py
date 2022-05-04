@@ -23,7 +23,18 @@ class Player(Deck):
         print("No more cards in the deck.")
 
     def add_count(self, new_card):
-        pass
+        value = new_card[0]
+        new_count = []
+        if value >= 10:
+            value = 10
+        if value != 1:
+            for item in self.count:
+                new_count.append(item + value)
+        else:
+            for item in self.count:
+                new_count.append(item + 1)
+                new_count.append(item + 11)
+        self.count = new_count
 
     def reset_hand(self):
         self.count = [0]
