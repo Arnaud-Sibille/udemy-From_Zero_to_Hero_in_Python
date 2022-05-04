@@ -6,6 +6,10 @@ class Player(Deck):
         self.name = name
         self.money = money
         self.count = [0]
+        self.bet = 0
+    
+    def add_bet(self, amount):
+        self.bet += amount
 
     def add_money(self, amount):
         self.money += amount
@@ -42,9 +46,12 @@ class Player(Deck):
         self.size = 0
 
     def print_player(self):
+        print("==============")
         print(f"Name: {self.name}")
         print(f"Money: {self.money}$")
+        print(f"Bet: {self.bet}$")
         print("Hand:")
         print(self)
         print("Count:")
         print(self.count)
+        print("==============")
