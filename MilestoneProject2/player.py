@@ -49,14 +49,3 @@ class Player(Deck):
         self.bet = 0
         self.stand = False
         self.result = None
-
-    def print_player(self):
-        print("==============")
-        print(f"Name: {self.name}")
-        print(f"Money: {self.money}$")
-        print(f"Bet: {self.bet}$")
-        print("Hand:")
-        print(self)
-        print("Count:")
-        print(self.count)
-        print("==============")
