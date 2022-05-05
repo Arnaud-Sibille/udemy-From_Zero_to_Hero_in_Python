@@ -7,6 +7,8 @@ class Player(Deck):
         self.money = money
         self.count = [0]
         self.bet = 0
+        self.stand = False
+        self.result = None
     
     def add_bet(self, amount):
         self.bet += amount
@@ -44,6 +46,9 @@ class Player(Deck):
         self.count = [0]
         self.cards = []
         self.size = 0
+        self.bet = 0
+        self.stand = False
+        self.result = None
 
     def print_player(self):
         print("==============")

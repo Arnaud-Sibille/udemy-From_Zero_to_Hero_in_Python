@@ -5,14 +5,38 @@ class Dealer(Player):
 		Player.__init__(self, "Dealer", 0)
 
 	def print_dealer1(self):
-		print("--------------")
+		line = "=" * 30
+		print(line)
 		print("Dealer:")
-		print(f"{self.cards[0][0]} of {self.cards[0][1]}")
-		print("--------------")
+		print(f"        {self.cards[0][0]: <2} of {self.cards[0][1]}")
+		print(line)
 
 	def print_dealer2(self):
-		print("--------------")
+		line = "=" * 30
+		print(line)
 		print("Dealer:")
-		print(f"{self.cards[0][0]} of {self.cards[0][1]}")
-		print("Unknown card")
-		print("--------------")
+		print(f"        {self.cards[0][0]: <2} of {self.cards[0][1]}")
+		print("        Unknown card")
+		print(line)
+
+	def print_dealer3(self):
+		line = "=" * 30
+		print(line)
+		print("Dealer:")
+		for item in self.cards:
+			print(f"        {item[0]: <2} of {item[1]}")
+		print(f"Count:  {(self.count)}")
+		print(line)
+
+	def print_dealer4(self):
+		line = "=" * 30
+		print(line)
+		print("Dealer:")
+		for item in self.cards:
+			print(f"        {item[0]: <2} of {item[1]}")
+		print(f"Count:  {(self.count)}")
+		res = max(self.count)
+		if res > 21:
+			res = "BUST"
+		print(f"Result:  {res}")
+		print(line)
